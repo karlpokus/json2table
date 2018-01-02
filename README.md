@@ -8,8 +8,16 @@ $ npm i
 ```
 
 # usage
+Simple
 ```bash
-$ node index.js [absolute/path/to/file]
+$ ./index.js [absolute/path/to/file]
+```
+Parsing data from kibana
+```bash
+$ echo "alias json2table='path/to/executable'" > .bash_profile
+# copy text
+$ pbpaste > $FILENAME
+$ json2table $FILENAME
 ```
 
 # license

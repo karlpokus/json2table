@@ -1,0 +1,27 @@
+{
+  "name": "json2table",
+  "version": "0.1.0",
+  "description": "parsing json to table",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karlpokus/json2table.git"
+  },
+  "keywords": [
+    "json",
+    "table",
+    "cli"
+  ],
+  "author": "karl.pokus@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karlpokus/json2table/issues"
+  },
+  "homepage": "https://github.com/karlpokus/json2table#readme",
+  "dependencies": {
+    "cli-table": "^0.3.1"
+  }
+}

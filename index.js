@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const Table = require('cli-table');
-const filePath = process.argv[2];
+let data = '';
 
 function makeTable(arr) {
 	const head = Object.keys(arr[0]);
@@ -11,10 +11,15 @@ function makeTable(arr) {
   return table;
 }
 
-function main(filePath) {
-	const data = require(filePath);
-  const output = makeTable(data);
-  console.log(output.toString());
+function parseInput(cb) {
+	if (process.stdin.isTTY) {
+		data = require(process.argv[2]);
+		cb(null, data);
+	} else {
+		process.stdin
+			.on('data', chunk => data += chunk)
+			.on('end', () => cb(null, JSON.parse(data)));
+	}
 }
 
-main(filePath);
+parseInput((err, data) => console.log(makeTable(data).toString()));
